@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Palette.h"
-
+#include <iostream>
 
 
 Palette::~Palette()
@@ -27,4 +27,14 @@ void Palette::Add(const SaftKiste& kiste)
 		pKisten[anzKisten] = new SaftKiste(lKiste);
 		anzKisten++;
 	}
+}
+
+void Palette::Print()
+{
+	std::cout << "Palette<[" << std::endl;
+	for (int i = 0; i < this->anzKisten; i++)
+	{
+		this->pKisten[i]->Print();
+	}
+	std::cout << "]>" << std::endl;
 }
