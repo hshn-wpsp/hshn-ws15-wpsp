@@ -8,14 +8,9 @@ class Palette
 	int anzKisten = 0;
 	SaftKiste* pKisten[AnzKisten];
 
-	static Palette* bananenTemplate = NULL;
-	Palette();
 public:
 	~Palette();
 	Palette(const Palette& original);
 	void Add(const SaftKiste& kiste);
 	void Print();
-	Palette* getBananenTemplate();
 };
-
-

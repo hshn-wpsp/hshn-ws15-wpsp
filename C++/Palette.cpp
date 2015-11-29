@@ -28,15 +28,3 @@ void Palette::Add(const SaftKiste& kiste)
 		anzKisten++;
 	}
 }
-
-Palette* Palette::getBananenTemplate()
-{
-	if (bananenTemplate == NULL){
-		bananenTemplate = new Palette();
-		for (int i = 0; i < 10; i++)
-		{
-			bananenTemplate->Add(*new SaftKiste(Saft::Banane, 1));
-		}
-	}
-	return bananenTemplate;
-}
