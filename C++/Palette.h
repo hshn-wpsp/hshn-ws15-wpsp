@@ -9,8 +9,10 @@ class Palette
 	SaftKiste* pKisten[AnzKisten];
 
 public:
+	Palette();
 	~Palette();
 	Palette(const Palette& original);
 	void Add(const SaftKiste& kiste);
 	void Print();
+	Palette& operator=(Palette& orig);
 };

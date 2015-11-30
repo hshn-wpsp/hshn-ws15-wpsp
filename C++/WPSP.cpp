@@ -7,14 +7,15 @@
 #include "Flasche.h"
 #include "SaftKiste.h"
 #include "Saft.h"
+#include "Palette.h"
 
 
 
 int _tmain(int argc, _TCHAR* argv[])
 {
 	int test;
-
-
+	
+	
 	std::cout << "Mein tolles Programm:" << std::endl;
 	
 	Flasche* flasche = new Flasche(Saft::Kirsche, 5);
@@ -30,14 +31,33 @@ int _tmain(int argc, _TCHAR* argv[])
 	std::cout << std::endl;
 	SaftKiste* kiste = new SaftKiste(Saft::Kirsche, 3.4f);
 	kiste->SaftFlasche(2)->FuellMenge(4.1f);
-	kiste->Print();
+	//kiste->Print();
 	std::cout << "Kopiert:" << std::endl;
 	SaftKiste* kopierteKiste = new SaftKiste(*kiste);
-	kopierteKiste->Print();
-	std::cout << "und en attribut geänert" << std::endl;
+	//kopierteKiste->Print();
+	//std::cout << "und en attribut geänert" << std::endl;
 	kopierteKiste->SaftFlasche(5)->FuellMenge(0);
-	kiste->Print();
-	kopierteKiste->Print();
+	//kiste->Print();
+	//kopierteKiste->Print();
+
+	std::cout << "neue Palette" << std::endl;
+	Palette* palette = new Palette();
+
+	palette->Add(*kiste);
+
+	palette->Print();
+
+	Palette* kopiePalette = new Palette(*palette);
+	std::cout << "kopiePalette" << std::endl;
+	kopiePalette->Add(*kopierteKiste);
+	
+	kopiePalette->Print();
+
+	
+	std::cout << "neue palette " << std::endl;
+	palette->Print();
+
+
 	std::cin >> test;
 	return 0;
 }
