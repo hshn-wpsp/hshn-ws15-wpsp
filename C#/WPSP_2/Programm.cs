@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace WPSP_2
 {
+
     class Programm
     {
+        private static void Print(int val) { 
+            Console.WriteLine(val); 
+        }
         static void Main(string[] args)
         {
             SafeBuffer temp = new SafeBuffer(4);
