@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="BufferOverFlowException.cs" />
     <Compile Include="BufferUnderFlowExecption.cs" />
+    <Compile Include="IProcessable.cs" />
     <Compile Include="Programm.cs" />
     <Compile Include="SafeBuffer.cs" />
     <Compile Include="Buffer.cs" />

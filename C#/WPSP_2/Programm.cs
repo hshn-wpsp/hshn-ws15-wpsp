@@ -16,7 +16,7 @@ namespace WPSP_2
         {
             SafeBuffer temp = new SafeBuffer(4);
             Processor print = new Processor(Print);
-            Console.WriteLine("Size: " + temp.size);
+            Console.WriteLine("Size: " + temp.Size);
             Console.WriteLine("Start Get Press Enter");
             Console.ReadLine();
             try

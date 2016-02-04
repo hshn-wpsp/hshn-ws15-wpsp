@@ -7,25 +7,18 @@ using System.Threading.Tasks;
 
 namespace WPSP_2
 { 
-    delegate void Processor(int val);
-
-    interface IProcessable
-    {
-        void ApplyToEach(Processor proc);
-    }
     
 
     class SafeBuffer : Buffer , IProcessable   {
-
-        private static void Print(int val) { Console.WriteLine(val); }
         
 
         private int elements;
+        private int p;
 
        
 
 
-        SafeBuffer(int i): base(i)
+        public SafeBuffer(int i): base(i)
         {
             elements = 0;
         }

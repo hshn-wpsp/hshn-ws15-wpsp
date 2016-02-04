@@ -12,13 +12,13 @@ namespace WPSP_2
         protected int[] data;
         protected int head, tail;
         protected int size;
-        private int property;
+        private int currentSize;
 
-        public int Property
+        public int Size
         {
             get
             {
-                return property;
+                return currentSize;
             }
         }
 
@@ -40,7 +40,7 @@ namespace WPSP_2
             data = new int[size];
             head = 0;
             tail = 0;
-            property = 0;
+            currentSize = 0;
         }
 
 
@@ -49,7 +49,7 @@ namespace WPSP_2
         {
             data[tail] = val;
             tail = (tail+1)%size;
-
+            currentSize++;
            
         }
         public virtual int Get()
@@ -60,6 +60,7 @@ namespace WPSP_2
         
             Array.Clear(data, head,1);
             head = (head + 1) % size;
+            currentSize--;
             return temp;
            
         }
